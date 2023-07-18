@@ -15,8 +15,10 @@ jobs:
       - name: Move into folder
         run: cd www
 
-      - name: Test Minify Workflow
+      - name: Minify Workflow
         uses: pabcrudel/static-website-minifier-workflow@main
 
       - name: Checkout
         run: ls
+  minify:
+    uses: pabcrudel/static-website-minifier-workflow@main
