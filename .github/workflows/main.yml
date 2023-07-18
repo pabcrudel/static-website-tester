@@ -12,5 +12,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Move into folder
+        uses: cd www
+
       - name: Test Minify Workflow
         uses: pabcrudel/static-website-minifier-workflow@main
+
+      - name: Checkout
+        uses: ls
