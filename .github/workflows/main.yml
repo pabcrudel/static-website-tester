@@ -12,15 +12,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Move into folder
-        run: cd www
-
-      - name: Minify Workflow
-        uses: pabcrudel/static-website-minifier-workflow@main
-
-      - name: Checkout
-        run: ls
-
   minify:
     uses: pabcrudel/static-website-minifier-workflow/.github/workflows/minify.yml@main
     with:
