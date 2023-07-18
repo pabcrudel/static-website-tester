@@ -22,3 +22,5 @@ jobs:
         run: ls
   minify:
     uses: pabcrudel/static-website-minifier-workflow@main
+    with:
+      project_path: ./www
