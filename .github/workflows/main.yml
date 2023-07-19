@@ -6,16 +6,27 @@ on:
       - main
 
 jobs:
-  minify:
+  hello_world_job:
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      - name: Minify and Save to Dist Folder
-        uses: pabcrudel/static-website-minifier-workflow@v1
+      - uses: actions/checkout@v3
+      - id: foo
+        uses: pabcrudel/hello-world-composite-action@v1
         with:
-          project_path: './www'
+          who-to-greet: 'Mona the Octocat'
+      - run: echo random-number ${{ steps.foo.outputs.random-number }}
+        shell: bash
+  # minify:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
 
-      - name: Test
-        run: ls -la ./www
+  #     - name: Minify and Save to Dist Folder
+  #       uses: pabcrudel/static-website-minifier-workflow@v1
+  #       with:
+  #         project_path: './www'
+
+  #     - name: Test
+  #       run: ls -la ./www
