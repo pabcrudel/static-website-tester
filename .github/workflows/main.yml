@@ -20,7 +20,13 @@ jobs:
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
 
-      - run: ls -la
+      - name: Download goodbye artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: goodbye-artifact
+          path: ./www     
+
+      - run: ls -la ./www
   # minify:
   #   runs-on: ubuntu-latest
   #   steps:
