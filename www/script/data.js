@@ -1,0 +1,1 @@
+const mydata = 3;
