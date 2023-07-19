@@ -6,27 +6,39 @@ on:
       - main
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Minify html, css and js files
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout files
+        uses: actions/checkout@v3
 
-      - id: foo
-        uses: pabcrudel/hello-world-composite-action@main
-        with:
-          who-to-greet: 'Mona the Octocat'
+      - name: Use "static-website-minifier-workflow" Action
+        uses: pabcrudel/static-website-minifier-workflow@feature/minify-script
+      
 
-      - run: echo random-number ${{ steps.foo.outputs.random-number }}
-        shell: bash
 
-      - name: Download goodbye artifact
-        uses: actions/download-artifact@v2
-        with:
-          name: goodbye-artifact
-          path: ./www     
+  # hello_world_job:
+  #   runs-on: ubuntu-latest
+  #   name: A job to say hello
+  #   steps:
+  #     - uses: actions/checkout@v3
 
-      - run: ls -la ./www
+  #     - id: foo
+  #       uses: pabcrudel/hello-world-composite-action@main
+  #       with:
+  #         who-to-greet: 'Mona the Octocat'
+
+  #     - run: echo random-number ${{ steps.foo.outputs.random-number }}
+  #       shell: bash
+
+  #     - name: Download goodbye artifact
+  #       uses: actions/download-artifact@v2
+  #       with:
+  #         name: goodbye-artifact
+  #         path: ./www     
+
+  #     - run: ls -la ./www
   # minify:
   #   runs-on: ubuntu-latest
   #   steps:
