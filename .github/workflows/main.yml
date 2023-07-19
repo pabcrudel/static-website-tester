@@ -13,8 +13,8 @@ jobs:
       - uses: actions/checkout@v3
       - id: foo
         uses: pabcrudel/hello-world-composite-action@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
+        # with:
+          # who-to-greet: 'Mona the Octocat'
       - run: echo random-number ${{ steps.foo.outputs.random-number }}
         shell: bash
   # minify:
