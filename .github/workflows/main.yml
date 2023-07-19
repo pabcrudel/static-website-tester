@@ -15,5 +15,5 @@ jobs:
 
       - name: Use "static-website-minifier-workflow" Action
         uses: pabcrudel/static-website-minifier-workflow@feature/minify-script
-        # with:
-        #   project_path: www
+        with:
+          project_path: www
