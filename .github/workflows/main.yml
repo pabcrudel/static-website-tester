@@ -26,7 +26,7 @@ jobs:
       - name: Download Minified Files
         uses: actions/download-artifact@v3
         with:
-          name: minified-website
+          name: "minified-website"
           path: dist
 
       - name: Use "github-pages-deploy-action" Action
