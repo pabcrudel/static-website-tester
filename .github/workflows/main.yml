@@ -33,5 +33,5 @@ jobs:
       - name: Use "github-pages-deploy-action" Action
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          BRANCH: gh-pages
-          FOLDER: dist
+          folder: dist
+          token: ${{ secrets.TOKEN }}
