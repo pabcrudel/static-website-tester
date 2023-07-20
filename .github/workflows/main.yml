@@ -29,9 +29,9 @@ jobs:
         with:
           name: minified-website
           path: dist
-
+      
       - name: Use "github-pages-deploy-action" Action
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+        uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
           folder: dist
           token: ${{ secrets.TOKEN }}
