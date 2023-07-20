@@ -20,13 +20,14 @@ jobs:
           artifact_name: "minified-website"
 
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     name: Deploy to GitHub Pages
     steps:
       - name: Download Minified Files
         uses: actions/download-artifact@v3
         with:
-          name: "minified-website"
+          name: minified-website
           path: dist
 
       - name: Use "github-pages-deploy-action" Action
