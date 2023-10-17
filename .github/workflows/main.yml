@@ -17,21 +17,23 @@ jobs:
         uses: pabcrudel/static-website-minifier-workflow@main
         with:
           project_path: www
-          artifact_name: github-pages
+          artifact_name: page
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-
-    permissions:
-      pages: write
-      id-token: write
-
+    needs: build
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
+      url: ${{steps.deployment.outputs.page_url}}
+      
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2     
+    - uses: actions/download-artifact@master
+      with:
+        name: page
+        path: .
+    - uses: actions/configure-pages@v1
+    - uses: actions/upload-pages-artifact@v1
+      with:
+        path: .
+    - id: deployment
+      uses: actions/deploy-pages@main    
