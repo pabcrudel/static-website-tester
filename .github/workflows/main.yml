@@ -31,10 +31,10 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: minified-website
-          path: .
+          path: dist
           
       - name: Use JamesIves Deployment Action
         uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
-          folder: .
+          folder: dist
           token: ${{ secrets.TOKEN }}   
