@@ -17,7 +17,6 @@ jobs:
         uses: pabcrudel/static-website-minifier-workflow@remove-artifact
         with:
           project_path: www
-          artifact_name: "minified-website"
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.3
