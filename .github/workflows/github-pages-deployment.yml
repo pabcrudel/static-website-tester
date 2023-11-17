@@ -1,4 +1,4 @@
-name: GitHub Pages Deployment
+name: Manually GitHub Pages Deployment
 
 on: workflow_dispatch
 
@@ -15,7 +15,7 @@ jobs:
       - name: Minify html, css and js files
         uses: pabcrudel/static-site-optimizer@main
         with:
-          project_path: website
+          project_path: www
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.3
