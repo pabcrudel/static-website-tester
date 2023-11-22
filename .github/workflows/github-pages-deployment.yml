@@ -1,6 +1,11 @@
 name: Manually GitHub Pages Deployment
 
-on: workflow_dispatch
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'www/**'
 
 jobs:
   ci-cd:
