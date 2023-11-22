@@ -17,7 +17,7 @@ jobs:
       - name: Minify html, css and js files
         uses: pabcrudel/static-website-minifier-workflow@main
         with:
-          project_path: www
+          project_path: website
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
