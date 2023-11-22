@@ -1,9 +1,6 @@
 name: Deploy Static Website
 
-on:
-  push:
-    branches:
-      - main
+on: workflow_dispatch
 
 concurrency:
   group: "pages"
