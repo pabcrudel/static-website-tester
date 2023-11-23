@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'website/**'
-      - '.github/workflows/github-pages-deployment.yml'
+      - .github/workflows/github-pages-deployment.yml
 
 jobs:
   ci-cd:
