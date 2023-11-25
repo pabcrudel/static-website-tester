@@ -1,4 +1,4 @@
-name: Display Issue \#${{ github.event.issue.number }} Event Details
+name: Display Issue Event Details
 
 on:
   issues:
