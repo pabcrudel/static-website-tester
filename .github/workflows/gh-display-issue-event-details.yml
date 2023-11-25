@@ -1,4 +1,4 @@
-name: Display Issue Event Details
+name: Display Issue \#${{ github.event.issue.number }} Event Details
 
 on:
   issues:
@@ -12,6 +12,6 @@ jobs:
     steps:
     - name: Print event details
       run: |
-        echo "Issue number: ${{ github.event.issue.number }}"
         echo "Issue title: ${{ github.event.issue.title }}"
+        echo "Issue body: ${{ github.event.issue.body }}"
         echo "Created by: ${{ github.event.issue.user.login }}"
