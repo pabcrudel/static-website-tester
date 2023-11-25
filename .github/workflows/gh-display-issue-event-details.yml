@@ -1,4 +1,4 @@
-name: Display Issue \# Event Details
+name: Display Issue Event Details
 
 on:
   issues:
